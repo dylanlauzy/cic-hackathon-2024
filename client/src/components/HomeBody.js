@@ -6,9 +6,9 @@ const HomeBody = () => {
     return (
         <div className="bg-green-100 min-h-screen flex flex-col items-center justify-center">
             <h1 className="text-green-600 text-6xl font-bold mb-4">
-                JOIN THE COMMUNITY
+                Ask Your Concerns...
             </h1>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col m-auto w-1/3 text-center">
                 <input
                     type="email"
                     placeholder="Your email address"
