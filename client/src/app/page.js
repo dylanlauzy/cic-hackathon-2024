@@ -8,9 +8,7 @@ export default function Home() {
         <>
             <NavBar />
             <HomeBody />
-            <main>
-                nothing...
-            </main>
+
         </>
     );
 }
