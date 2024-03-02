@@ -4,19 +4,28 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
+
 const ResultBody = () => {
     return (
-        <div style={{ backgroundImage: "url('/images/blue.png')", backgroundSize: 'cover', minHeight: '100vh' }}>
+        <div style={{ backgroundImage: "url('/images/beige.png')", backgroundSize: 'cover', minHeight: '100vh' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '4rem', padding: '5rem' }}>
                 {/* Card 1 */}
-                <Card>
+                <Card sx={{ boxShadow: 3, border: '1px solid #ddd', borderRadius: '16px' }}> {/* Added shadow and border */}
                     <CardMedia
                         component="img"
                         height="140"
-                        image="/images/infj.webp"
+                        image="/images/intj.webp"
                         alt="Image description"
                     />
                     <CardContent>
+                        <Typography
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                            sx={{ color: 'purple' }} // Changed color property to work with MUI
+                        >
+                            INTJ
+                        </Typography>
                         <Typography variant="body2" color="text.secondary">
                             This is the content for card 1.
                         </Typography>
@@ -25,14 +34,22 @@ const ResultBody = () => {
                 {/* Repeat the structure for each card with unique content and images */}
                 {/* ... */}
                 {/* Card 16 */}
-                <Card>
+                <Card sx={{ boxShadow: 3, border: '1px solid #ddd', borderRadius: '16px' }}> {/* Added shadow and border */}
                     <CardMedia
                         component="img"
                         height="140"
-                        image="/image-placeholder-1.jpg"
+                        image="/images/intp.webp"
                         alt="Image description"
                     />
                     <CardContent>
+                        <Typography
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                            sx={{ color: 'purple' }} // Changed color property to work with MUI
+                        >
+                            INTP
+                        </Typography>
                         <Typography variant="body2" color="text.secondary">
                             This is the content for card 2.
                         </Typography>
