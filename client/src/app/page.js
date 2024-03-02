@@ -1,9 +1,16 @@
 import Image from "next/image";
+import NavBar from '../components/NavBar';
+import HomeBody from "@/components/HomeBody"; // Adjust the path according to your file structure
+
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello World
-    </main>
-  );
+    return (
+        <>
+            <NavBar />
+            <HomeBody />
+            <main>
+                nothing...
+            </main>
+        </>
+    );
 }
