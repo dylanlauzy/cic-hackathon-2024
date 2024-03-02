@@ -1,0 +1,7 @@
+INTJ = "My name is Alex"
+INTP = "My name is Dylan"
+INFJ = "My name is Dylan"
+INFP = "My name is Dylan"
+ENFJ = "My name is Dylan"
+ESTJ = "My name is Dylan"
+ESFJ = "My name is Dylan"
