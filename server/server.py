@@ -40,7 +40,7 @@ llm = Bedrock(
 )
 
 mbtis = [
-    "ISTJ", "ISFJ", "INFJ", "INTJ",
+    "ISTJ",
 ]
 
 chat_histories = {}
