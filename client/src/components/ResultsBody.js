@@ -8,7 +8,7 @@ const ResultBody = () => {
   return (
     <div
       style={{
-        backgroundImage: "url('/images/beige.png')",
+        backgroundImage: "url('/images/blue.png')",
         backgroundSize: "cover",
         minHeight: "100vh",
       }}
@@ -83,7 +83,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -96,7 +101,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -109,7 +119,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -122,7 +137,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -135,7 +155,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -148,7 +173,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -161,7 +191,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -174,7 +209,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -187,7 +227,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -200,7 +245,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -213,7 +263,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -226,7 +281,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -239,7 +299,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
@@ -252,7 +317,12 @@ const ResultBody = () => {
             </Typography>
           </CardContent>
         </Card>
-        <Card>
+        <Card
+            sx={{
+              boxShadow: 3,
+              border: "1px solid #ddd",
+              borderRadius: "16px",
+            }}>
           <CardMedia
             component="img"
             height="140"
