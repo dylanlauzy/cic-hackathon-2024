@@ -1,26 +1,47 @@
-// components/HomeBody.js
+"use client";
 
-import NavBar from "@/components/NavBar";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useAppContext } from "@/context/AppContext";
 
 const HomeBody = () => {
-    return (
-        <div className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/images/blue.png')" }}>
-            <h1 className="text-6xl font-bold mb-6">
-                ASK YOUR <span className="text-blue-500">ISSUE</span>...
-            </h1>
+  const { question, setQuestion } = useAppContext();
+  const router = useRouter(); // Instantiate the router
 
-            <div className="relative top-10">
-                <input
-                    type="email"
-                    placeholder="type in your message"
-                    className="pl-4 pr-24 py-3 rounded-md text-lg w-full"
-                />
-                <button className="absolute right-0 top-0 bottom-0 bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-md">
-                    Send
-                </button>
-            </div>
-        </div>
-    );
-}
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    router.push("results");
+  };
+
+  return (
+    <div
+      className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/blue.png')" }}
+    >
+      <h1 className="text-blue-500 text-6xl font-bold mb-6">
+        ASK YOUR ISSUE...
+      </h1>
+      <div className="relative">
+        <form onSubmit={handleSubmit}>
+          <input
+            value={question}
+            onChange={(e) => {
+              setQuestion(e.target.value);
+            }}
+            placeholder="type in your message"
+            className="pl-4 pr-20 py-3 rounded-md text-lg w-full"
+          />
+          <button
+            className="absolute right-0 top-0 bottom-0 bg-blue-300 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-md"
+            type="submit"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
 
 export default HomeBody;
+
