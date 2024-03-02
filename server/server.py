@@ -1,7 +1,9 @@
+from collections import defaultdict
 from email.quoprimime import body_check
 from os import read
 from pathlib import Path
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException, Body
+from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 
 from langchain.chains import LLMChain
@@ -15,6 +17,14 @@ with open(PROMPT_TXT, 'r') as f:
     PROMPT_TEMPLATE = f.read()
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 bedrock_client = boto3.client(
     service_name="bedrock-runtime",
@@ -31,15 +41,13 @@ llm = Bedrock(
 
 mbtis = [
     "ISTJ", "ISFJ", "INFJ", "INTJ",
-    "ISTP", "ISFP", "INFP", "INTP",
-    "ESTP", "ESFP", "ENFP", "ENTP",
-    "ESTJ", "ESFJ", "ENFJ", "ENTJ"
 ]
 
-chats = {}
+chat_histories = {}
+chats = defaultdict(list)
 
 def get_chat_response(mbti: str, question: str):
-    conversation_history = chats.get(mbti, "")
+    conversation_history = chat_histories.get(mbti, "")
     
     
     prompt = PromptTemplate(
@@ -53,17 +61,33 @@ def get_chat_response(mbti: str, question: str):
     
     processed_response = response['text'].split('</response>')[0].strip()
     
-    chats[mbti] = f"{conversation_history}\nUser: {question}\nConsul: {processed_response}"
+    chat_histories[mbti] = f"{conversation_history}\nUser: {question}\nConsul: {processed_response}"
     
     return processed_response
 
-@app.post("/chat")
+@app.get("/chat")
+async def get_chat(mbti: str):
+    return chats[mbti]
+
+@app.post("/question")
+async def question(question: str = Body(...)):
+    for mbti in mbtis:
+        response = get_chat_response(mbti, question)
+        chats[mbti].append(("user", question))
+        chats[mbti].append(("agent", response))
+    
+    return chats
+
+@app.post("/message")
 async def chatbot_endpoint(mbti: str, question: str = Body(...)):
     try:
         response = get_chat_response(mbti, question)
+        chats[mbti].append(("user", question))
+        chats[mbti].append(("agent", response))
         return {"response": response}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
 
 @app.get("/")
 async def main():
