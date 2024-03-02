@@ -1,12 +1,13 @@
 "use client";
 
 import NavBar from "@/components/NavBar";
+import ResultBody from "@/components/ResultsBody";
 import { useAppContext } from "@/context/AppContext";
 import { useEffect, useState } from "react";
 
 const API_ENDPOINT = "http://localhost:8000";
 
-const ResultsBody = () => {
+const Results = () => {
   const { question, chats, setChats } = useAppContext();
 
   useEffect(() => {
@@ -34,25 +35,18 @@ const ResultsBody = () => {
   return (
     <>
       <NavBar />
-      <div>
-        {Object.keys(chats).length ? (
-          <></>
-        ) : (
-          // <div>
-          //   {/* Render your results here */}
-          //   {results.map((result, index) => (
-          //     <div key={index}>
-          //       {/* Render each result */}
-          //       {result.name}{" "}
-          //       {/* Replace `name` with whatever field your data contains */}
-          //     </div>
-          //   ))}
-          // </div>
-          <p>Loading results...</p>
-        )}
+      <div
+        className="pt-16 flex"
+        style={{
+          backgroundImage: "url('/images/blue.png')",
+          backgroundSize: "cover",
+          minHeight: "100vh",
+        }}
+      >
+        {Object.keys(chats).length ? <ResultBody /> : <p className="m-auto text-3xl">Loading results...</p>}
       </div>
     </>
   );
 };
 
-export default ResultsBody;
+export default Results;
