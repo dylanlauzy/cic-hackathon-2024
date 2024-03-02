@@ -8,10 +8,10 @@ const HomeBody = () => {
             <h1 className="text-green-600 text-6xl font-bold mb-4">
                 Ask Your Concerns...
             </h1>
-            <div className="flex flex-col m-auto w-1/3 text-center">
+            <div className="flex flex-col items-center">
                 <input
                     type="email"
-                    placeholder="Your email address"
+                    placeholder="type in your message"
                     className="p-3 rounded-md text-lg mb-4"
                 />
                 <button className="bg-green-300 hover:bg-green-400 text-white font-bold py-2 px-4 rounded">
