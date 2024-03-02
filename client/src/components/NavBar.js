@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const NavBar = () => {
     return (
-        <nav className="relative border-b border-pink-300">
+        <nav className="relative border-b border-b-blue-200">
             <div className="container mx-auto flex justify-between items-center py-4">
                 {/* Logo and Flower Icon */}
                 <div className="flex items-center">
@@ -18,7 +18,7 @@ const NavBar = () => {
                         <span className="text-pink-600 hover:text-pink-800 cursor-pointer">Home</span>
                     </Link>
                     <Link href="/results">
-                        <span className="text-pink-600 hover:text-pink-800 cursor-pointer">History</span>
+                        <span className="text-pink-600 hover:text-pink-800 cursor-pointer">Results</span>
                     </Link>
                     <Link href="/about">
                         <span className="text-pink-600 hover:text-pink-800 cursor-pointer">About us</span>

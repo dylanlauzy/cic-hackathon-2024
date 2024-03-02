@@ -4,18 +4,18 @@ import NavBar from "@/components/NavBar";
 
 const HomeBody = () => {
     return (
-        <div className="bg-green-100 min-h-screen flex flex-col items-center justify-center">
-            <h1 className="text-green-600 text-6xl font-bold mb-4">
-                Ask Your Concerns...
+        <div className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('/images/background.png')" }}>
+            <h1 className="text-blue-200 text-6xl font-bold mb-6">
+                ASK YOUR ISSUE...
             </h1>
-            <div className="flex flex-col items-center">
+            <div className="relative">
                 <input
                     type="email"
                     placeholder="type in your message"
-                    className="p-3 rounded-md text-lg mb-4"
+                    className="pl-4 pr-20 py-3 rounded-md text-lg w-full"
                 />
-                <button className="bg-green-300 hover:bg-green-400 text-white font-bold py-2 px-4 rounded">
-                    Get Started
+                <button className="absolute right-0 top-0 bottom-0 bg-blue-300 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded-md">
+                    Send
                 </button>
             </div>
         </div>
