@@ -40,7 +40,7 @@ llm = Bedrock(
 )
 
 mbtis = [
-    "ISTJ",
+    "ISTJ", "INFJ", "ENTJ", "ESFJ", "ENFJ", "ISFJ",
 ]
 
 chat_histories = {}
@@ -66,8 +66,8 @@ def get_chat_response(mbti: str, question: str):
     return processed_response
 
 @app.get("/chat")
-async def get_chat(mbti: str):
-    return chats[mbti]
+async def get_chat():
+    return chats
 
 @app.post("/question")
 async def question(question: str = Body(...)):
@@ -84,7 +84,7 @@ async def chatbot_endpoint(mbti: str, question: str = Body(...)):
         response = get_chat_response(mbti, question)
         chats[mbti].append(("user", question))
         chats[mbti].append(("agent", response))
-        return {"response": response}
+        return chats
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     

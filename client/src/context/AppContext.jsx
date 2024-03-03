@@ -5,10 +5,20 @@ const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
   const [question, setQuestion] = useState("");
+  const [selectedGuy, setSelectedGuy] = useState("");
   const [chats, setChats] = useState({});
 
   return (
-    <AppContext.Provider value={{ question, setQuestion, chats, setChats }}>
+    <AppContext.Provider
+      value={{
+        question,
+        setQuestion,
+        chats,
+        setChats,
+        selectedGuy,
+        setSelectedGuy,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

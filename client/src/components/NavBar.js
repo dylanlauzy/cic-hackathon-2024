@@ -10,25 +10,15 @@ const NavBar = () => {
           <div className="flex items-center">
             {/* Replace with your logo and icon */}
             <Image src="/images/infj-advocate.png" width={32} height={32} />
-            <span className="font-bold text-xl ml-2">MBTI</span>
+            <span className="font-bold text-xl ml-2">TypeTalk</span>
           </div>
         </Link>
 
         {/* Navigation Links */}
         <div className="flex items-center space-x-4">
-          <Link href="/">
-            <span className="font-bold text-blue-400 hover:text-blue-600 cursor-pointer">
-              ASK
-            </span>
-          </Link>
           <Link href="/results">
             <span className="font-bold text-blue-400 hover:text-blue-600 cursor-pointer">
-              RESULTS
-            </span>
-          </Link>
-          <Link href="/about">
-            <span className="font-bold text-blue-400 hover:text-blue-600 cursor-pointer">
-              About us
+              Results
             </span>
           </Link>
         </div>

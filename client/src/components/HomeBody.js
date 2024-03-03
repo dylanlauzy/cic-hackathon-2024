@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAppContext } from "@/context/AppContext";
+import ThreeJSScene from "@/scenes/ThreeJSScene";
 
 const HomeBody = () => {
   const { question, setQuestion } = useAppContext();
@@ -18,8 +19,11 @@ const HomeBody = () => {
       className="min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: "url('/images/blue.png')" }}
     >
+      <div className="inline-block" style={{ width: "800px", height: "500px" }}>
+        <ThreeJSScene></ThreeJSScene>
+      </div>
       <h1 className="text-blue-500 text-6xl font-bold mb-6">
-        ASK YOUR ISSUE...
+        What's your issue?
       </h1>
       <div className="relative">
         <form onSubmit={handleSubmit}>
@@ -44,4 +48,3 @@ const HomeBody = () => {
 };
 
 export default HomeBody;
-
