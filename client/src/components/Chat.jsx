@@ -48,11 +48,7 @@ function ChatApp() {
       // This assumes the API returns the entire chat history including the new message
       setChats({
         ...chats,
-        [selectedGuy]: [
-          ...messages,
-          ["user", newMessage],
-          ["agent", data[selectedGuy]],
-        ],
+        [selectedGuy]: data[selectedGuy],
       });
     } catch (error) {
       console.error("Fetching error: ", error);
