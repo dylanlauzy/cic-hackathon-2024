@@ -3,6 +3,8 @@ TypeTalk is a chat-based AI web application that allows users to interact with 1
 
 Technologies used: NextJS (Frontend), Python/Flask (Backend), AWS (Bedrock, Lambda), Claude AI
 
+More Information: https://devpost.com/software/cic-hackathon-2024
+
 Built By: Alex Wu, Colin Chen, Dylan Lau, Steven Huang
 
 Architecture Diagram:
